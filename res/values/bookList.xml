@@ -1,0 +1,8 @@
+<resources>
+
+	<string name="bookOne">The Colour of Magic</string>
+	<string name="bookTwo">The Light Fantastic</string>
+	<string name="bookThree">Equal Rites</string>
+	<string name="bookFour">Mort</string>
+	
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">Discworld Novel Checklist</string>
+    <string name="greeting_string">Welcome to the Discworld check list app</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_check_list_window_window">Discworld Novel Checklist</string>
+    <string name="imageCreditsDuck">The image used as the app icon for this project is taken from the following website: http://niknaksoldpeculiarblog.blogspot.co.uk/2011/06/sir-terry-pratchett-more-on-choosing-to.html</string>
+    <string name="imageCreditsATuin">The image used (what it\'s used for) for this project is take from the following website: http://theyoungtook.deviantart.com/art/A-Tuin-and-the-Disc-World-116371456</string>
+    <string name="listOfBooksCredit">The list of books for this app was taken from a copy of \"Night Watch\" and verified against the list at the following website: http://discworld.wikia.com/wiki/List_of_Discworld_Books</string>
+
+</resources>
