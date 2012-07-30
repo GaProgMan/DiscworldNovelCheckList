@@ -11,38 +11,6 @@
         android:layout_centerHorizontal="true"
         android:padding="@dimen/padding_medium"
         android:text="@string/greeting_string"
-        tools:context=".CheckListWindowWindow" />
-
-    <CheckBox
-        android:id="@+id/checkBoxBookOne"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/welcomeMessage"
-        android:layout_below="@+id/welcomeMessage"
-        android:text="@string/bookOne" />
-
-    <CheckBox
-        android:id="@+id/checkBoxBookTwo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBoxBookOne"
-        android:layout_below="@+id/checkBoxBookOne"
-        android:text="@string/bookTwo" />
-
-    <CheckBox
-        android:id="@+id/checkBoxBookThree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBoxBookTwo"
-        android:layout_below="@+id/checkBoxBookTwo"
-        android:text="@string/bookThree" />
-
-    <CheckBox
-        android:id="@+id/checkBoxBookFour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBoxBookThree"
-        android:layout_below="@+id/checkBoxBookThree"
-        android:text="@string/bookFour" />
+        tools:context=".CheckListWindowWindow" /> 
 
 </RelativeLayout>
