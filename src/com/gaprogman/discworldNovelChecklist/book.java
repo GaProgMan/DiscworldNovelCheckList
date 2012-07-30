@@ -1,37 +1,26 @@
 package com.gaprogman.discworldNovelChecklist;
 
-import android.R.string;
-
 public class book {
-	private android.R.string name;
-	private int releaseNumber;
-	private android.R.string releaseDate;
+	private String name;
 	
-	/* start GET methods */
-	public android.R.string getName() {
-		return name;
+	public book (){
+		this.name = "";
 	}
 	
-	public int getNumber(){
-		return releaseNumber;
-	}
-	
-	public android.R.string getReleaseDate(){
-		return releaseDate;
-	}
-	/* end GET methods */
-	
-	/* start SET methods */
-	public void setName(android.R.string nameOfBook){
+	public book(String nameOfBook){
 		this.name = nameOfBook;
 	}
 	
-	public void setReleaseNumber(int release){
-		this.releaseNumber = release;
+	/* start GET methods */
+	public String getName() {
+		return name;
 	}
 	
-	public void setReleaseDate(android.R.string dateOfRelease){
-		this.releaseDate = dateOfRelease;
+	/* end GET methods */
+	
+	/* start SET methods */
+	public void setName(String nameOfBook){
+		this.name = nameOfBook;
 	}
 	/* end SET methods */
 }
