@@ -1,4 +1,4 @@
-# DiscworldNovelCheckList # 
+# DiscworldNovelCheckList #
 
 ### Original creation date ###
 29/07/2012
