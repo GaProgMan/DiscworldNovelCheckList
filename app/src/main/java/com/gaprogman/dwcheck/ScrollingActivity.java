@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
 public class ScrollingActivity extends AppCompatActivity {
 
     @Override
@@ -20,7 +22,12 @@ public class ScrollingActivity extends AppCompatActivity {
         // this will be moved into a service layer later
         if (dbHandler.getBookCount() == 0) {
             // if we have no books, then we must add the default ones
+            BookService service = new BookService();
+            Book bookToAdd = service.getDefaultEntry();
+            dbHandler.addBook(bookToAdd);
         }
+
+        List<Book> allBooksFromDb = dbHandler.getAllBooks();
 
 
         setContentView(R.layout.activity_scrolling);

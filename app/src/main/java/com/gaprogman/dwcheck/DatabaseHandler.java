@@ -51,7 +51,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_ISBN + " TEXT," + KEY_RELEASE_DATE + " TEXT,"
                 + KEY_COVER_URL + " TEXT," + KEY_SYNOPSIS + " TEXT,"
                 + KEY_HAS_READ + " INTEGER, " + KEY_LAST_READ_DATE + " TEXT, "
-                + KEY_READ_COUNT + "INTEGER" + ")";
+                + KEY_READ_COUNT + " INTEGER" + ")";
         db.execSQL(CREATE_BOOKS_TABLE);
     }
 
@@ -170,21 +170,32 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      */
     private Book ReadCursorToBook(Cursor cursor) {
         Book book = new Book();
+
         book.id = Integer.parseInt(cursor.getString(0));
         book.title = cursor.getString(1);
         book.isbn = cursor.getString(2);
+        if (!cursor.isNull(3)) {
+            try {
+                book.releaseDate = ISO_DATE.parse(cursor.getString(3));
+            } catch (ParseException e) {
+                book.releaseDate = null;
+            }
+        } else{
+            book.releaseDate = null;
+        }
         book.coverUrl = cursor.getString(4);
         book.synopsis = cursor.getString(5);
         book.hasRead = cursor.getString(6) == "1" ? true : false;
-        book.readCount = Integer.parseInt(cursor.getString(8));
-
-        // need to wrap these in try catches, but I'm not bothered
-        // if there's an exception, as null date is a valid value
-        try {
-            book.releaseDate = ISO_DATE.parse(cursor.getString(3));
-            book.lastReadDate = ISO_DATE.parse(cursor.getString(7));
-        } catch (ParseException e) {
+        if (!cursor.isNull(7)) {
+            try {
+                book.lastReadDate = ISO_DATE.parse(cursor.getString(7));
+            } catch (ParseException e) {
+                book.lastReadDate = null;
+            }
+        }else {
+            book.lastReadDate = null;
         }
+        book.readCount = Integer.parseInt(cursor.getString(8));
 
         return book;
     }
@@ -203,7 +214,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_COVER_URL, bookToAdd.coverUrl);
         values.put(KEY_SYNOPSIS, bookToAdd.synopsis);
         values.put(KEY_HAS_READ, bookToAdd.HasReadAsInt());
-        values.put(KEY_LAST_READ_DATE, bookToAdd.releaseDate != null ? ISO_DATE.format(bookToAdd.releaseDate) : "");
+        values.put(KEY_LAST_READ_DATE, bookToAdd.lastReadDate != null ? ISO_DATE.format(bookToAdd.lastReadDate) : "");
         values.put(KEY_READ_COUNT, bookToAdd.readCount);
 
         return values;
