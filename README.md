@@ -15,7 +15,7 @@ Jamie 'GaProgMan' Taylor
 ## Licence ##
 
 		GNU Copyright information
-		Copyright 2012 Jamie Taylor <jamie@gaprogman.com>
+		Copyright 2016 Jamie Taylor <jamie@gaprogman.com>
 
 		This program is free software; you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -33,6 +33,13 @@ Jamie 'GaProgMan' Taylor
 		MA 02110-1301, USA.
 
 ## Changelog ##
+
+2016-05-25 - Jamie Taylor
+ - Began re-implementing entire code base from the ground up.
+ - Added SQLite code to perform CRU (of CRUD) operations
+ - Added a service class (will be expanded on in a later commit) for adding
+   default books when no database is present.
+ - Happy Glorious 25th of May!
 
 2013-05-27 - Jamie Taylor
 - Updated Readme to use Markdown
